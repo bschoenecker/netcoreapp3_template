@@ -23,6 +23,9 @@ namespace netcoreapp3_template
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<netcoreapp3Context>(opts => {
+                opts.UseSqlServer(Configuration["ConnectionStrings:netcoreapp3Connection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

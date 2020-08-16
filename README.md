@@ -40,7 +40,5 @@ Base 'dotnet new web' template with the following actions performed:
 
         services.AddDbContext<netcoreapp3Context>(opts => {
             opts.UseSqlServer(Configuration["ConnectionStrings:netcoreapp3Connection"]);
-        })
+        });
         }
-
-- Added something
