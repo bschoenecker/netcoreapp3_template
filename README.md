@@ -19,21 +19,28 @@ Base 'dotnet new web' template with the following actions performed:
 - Installed package 'Microsoft.EntityFrameworkCore.SqlServer' version 3.1.4
 - Installed tool 'dotnet-ef' version 3.1.4 (*local global setting*)
 - Added the following SQL connection string in 'appsettings.json':
-            "ConnectionStrings:" {
-            "netcoreapp3Connection": "Server=LOCALHOST\\SQLEXPRESS;Database=netcoreapp3;MultipleActiveResultSets=true"
-            }
+
+        "ConnectionStrings:" {
+        "netcoreapp3Connection": "Server=LOCALHOST\\SQLEXPRESS;Database=netcoreapp3;MultipleActiveResultSets=true"
+        }
+
 - Added 'DbContext.cs' class for Entity Framework
 - Added Entity Framework configurations in 'Startup.cs':
     - Added 'using Microsoft.Extensions.Configuration;'
     - Added 'using Microsoft.EntityFrameworkCore;'
     - Added 'using netcoreapp3_template.Models;'
 - Added constructor for Startup class and the following config:
-            public Startup(IConfiguration config) {
-            Configuration = config;
-            }
-            private IConfiguration Configuration {get; set;}
+
+        public Startup(IConfiguration config) {
+        Configuration = config;
+        }
+        private IConfiguration Configuration {get; set;}
+
 - Added service for Entity Framework in Startup.cs:
-            services.AddDbContext<netcoreapp3Context>(opts => {
-                opts.UseSqlServer(Configuration["ConnectionStrings:netcoreapp3Connection"]);
-            })
-            }
+
+        services.AddDbContext<netcoreapp3Context>(opts => {
+            opts.UseSqlServer(Configuration["ConnectionStrings:netcoreapp3Connection"]);
+        })
+        }
+
+- Added something
