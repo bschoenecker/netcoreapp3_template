@@ -15,3 +15,11 @@ Base 'dotnet new web' template with the following actions performed:
 - Added '_Layout.cshtml' in Views/Shared folder
 - Added 'HomeController.cs' in Controllers folder
 - Added 'Index.cshtml' to Views/Home folder
+- Installed package 'Microsoft.EntityFrameworkCore.Design' version 3.1.4
+- Installed package 'Microsoft.EntityFrameworkCore.SqlServer' version 3.1.4
+- Installed tool 'dotnet-ef' version 3.1.4 (*local global setting*)
+- Added the following SQL connection string in 'appsettings.json':
+         "ConnectionStrings:" {
+            "netcoreapp3Connection": "Server=LOCALHOST\\SQLEXPRESS;Database=netcoreapp3;MultipleActiveResultSets=true"
+        }
+-Added 'DbContext.cs' class for Entity Framework
